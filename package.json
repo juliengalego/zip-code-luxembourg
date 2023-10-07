@@ -1,6 +1,7 @@
 {
   "name": "zip-code-luxembourg",
-  "version": "0.0.7",
+  "description": "A package for handling zip code data in Luxembourg.",
+  "version": "0.0.8",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "scripts": {
@@ -23,6 +24,10 @@
     "postal code",
     "street information"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/juliengalego/zip-code-luxembourg"
+  },
   "author": "Julien GALEGO",
   "license": "MIT"
 }
