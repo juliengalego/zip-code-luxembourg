@@ -1,0 +1,28 @@
+{
+  "name": "zip-code-luxembourg",
+  "version": "0.0.7",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "test": "jest"
+  },
+  "devDependencies": {
+    "@types/jest": "^29.5.5",
+    "@types/node": "^20.8.3",
+    "csv-parser": "^3.0.0",
+    "jest": "^29.7.0",
+    "typescript": "^5.2.2"
+  },
+  "keywords": [
+    "zip code",
+    "Luxembourg",
+    "geolocation",
+    "location data",
+    "address lookup",
+    "postal code",
+    "street information"
+  ],
+  "author": "Julien GALEGO",
+  "license": "MIT"
+}
