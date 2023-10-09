@@ -1,7 +1,7 @@
 {
   "name": "zip-code-luxembourg",
   "description": "A package for handling zip code data in Luxembourg.",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "scripts": {

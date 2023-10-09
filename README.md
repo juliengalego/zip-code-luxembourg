@@ -19,7 +19,7 @@ const result = getInfos({zipCode:'1234'});
 console.log(result);
 ````
 #### Output
-````json lines
+````typescript
 [
   {
     district: 'LUXEMBOURG',
@@ -43,7 +43,7 @@ console.log(result);
 ````
 
 #### Output
-````json lines
+````typescript
  [
       'Avenue du Blues',
       'Avenue du Swing',
