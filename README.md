@@ -11,50 +11,51 @@ npm install zip-code-luxembourg
 ````
 
 ## Usage 
-### Get Info By Zip Code
-
-Get an array of city and address linked to a zip code.
+Get postal information (district, canton, municipality, city, street) linked to a zip code.
 
 ````javascript
-const {getInfoByZipCode} = require('zip-code-luxembourg');
-const result = getInfoByZipCode('1234');
+const {getInfos} = require('zip-code-luxembourg');
+const result = getInfos({zipCode:'1234'});
 console.log(result);
 ````
 #### Output
 ````json lines
 [
   {
-    "city": "LUXEMBOURG",
-    "street": "RUE MARGUERITE-SERAPHINE BEVING",
-    "zipCode": "1234"
+    district: 'LUXEMBOURG',
+    canton: 'LUXEMBOURG-VILLE',
+    municipality: 'Luxembourg',
+    city: 'Luxembourg',
+    street: 'Rue Marguerite-Séraphine Beving',
+    zipCode: '1234'
   }
 ]
 ````
 
-### Get Info By City
+### Alternative usage
+You can filter by any postal information (district, canton, municipality, city, street, zip code)
+For example if you want to get all the streets of one city:
 
-````typescript
-getInfoByCity('Sanem')
+````javascript
+const {getInfos} = require('zip-code-luxembourg');
+const result = getInfos({city:'Belvaux'}).map((item) => item.street);
+console.log(result);
 ````
+
 #### Output
 ````json lines
-[
-  {
-    "city": "SANEM",
-    "street": "CITE SCHMIEDENACHT",
-    "zipCode": "4993"
-  },
-  {
-    "city": "SANEM",
-    "street": "COIN DU LOHR",
-    "zipCode": "4987"
-  }
-  // ... more data
+ [
+      'Avenue du Blues',
+      'Avenue du Swing',
+      'Avenue Michel Majerus',
+      'Belval-Rédange-Halte',
+      ...
 ]
 ````
 
 ## Data source
-Our npm package leverages data from the [Villes, Rues et Codes Postaux de Luxembourg](https://data.public.lu/fr/datasets/villes-rues-et-codes-postaux-de-luxembourg-1/)  dataset issued by [Post Luxembourg](https://post.lu/), a comprehensive source of information on cities, streets, and postal codes in Luxembourg
+Our npm package leverages data from the [Registre national des localités et des rues
+](https://data.public.lu/fr/datasets/registre-national-des-localites-et-des-rues/#resources)  dataset issued by [Administration du cadastre et de la topographie](https://data.public.lu/fr/organizations/administration-du-cadastre-et-de-la-topographie/), a comprehensive source of information on cities, streets, and postal codes in Luxembourg
 The data is converted to json with `/lib/convert-csv-to-json.js`
 This package will be updated along the source dataset.
 
